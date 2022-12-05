@@ -1,6 +1,6 @@
-# Jenna Zaidspiner Topic: 2 Floating Point Arithmetic and Errors {#jenna-zaidspiner-topic-2-floating-point-arithmetic-and-errors .unnumbered}
-
-# Floating point numbers {#floating-point-numbers .unnumbered}
+# Jenna Zaidspiner
+# Topic 2: Floating Point Arithmetic and Errors 
+# Floating point numbers
 
 In order to understand floating point arithmetic, we must define what a
 floating point number is. A floating point number is an integer value
@@ -16,9 +16,9 @@ where $0 \le d_i\le \beta - 1, i = 0,..., p-1, E\in [L, U]$. The
 mantissa is the value $d_0d_1...d_{p-1}$. Numbers that aren't exactly
 representable in floating point are called *machine numbers*.
 
-# Floating point arithmetic {#floating-point-arithmetic .unnumbered}
+# Floating point arithmetic
 
-## Addition and Subtraction {#addition-and-subtraction .unnumbered}
+## Addition and Subtraction
 
 When adding and subtracting floating point numbers, you must shift the
 mantissas of the numbers so that the exponents of each number match. For
@@ -35,7 +35,7 @@ will discuss the errors associated with each arithmetic operation in a
 later section, but for now it is important to understand the operations
 themselves.
 
-## Multiplication {#multiplication .unnumbered}
+## Multiplication
 
 Just like with addition and subtraction, you still must shift the
 mantissa. However, you do not shift it to make the exponent match, you
@@ -43,33 +43,33 @@ shift it so that there is only one digit in front of the decimal place
 for each number. Then you simply multiply the significands (the part of
 the number that is before the exponent) and add the exponents. For
 example, if we want to calculate $1.234\times 208.5$, we do the
-following steps: $$\begin{aligned}
-    1.234\times 10^0 * 2.085\times 10^2\\
-    =(1.234*2.085)\times (10^{0+2})\\
-    =2.57289\times 10^2\\
-    =257.3\\
-\end{aligned}$$ Notice that we have a loss of digits in the
+following steps:
+    $$1.234\times 10^0 * 2.085\times 10^2$$
+    $$=(1.234*2.085)\times (10^{0+2})$$
+    $$=2.57289\times 10^2$$
+    $$=257.3$$ 
+    Notice that we have a loss of digits in the
 multiplication case as well since the answer must have the same
 precision as the starting values.
 
-## Division {#division .unnumbered}
+## Division
 
 Similar to multiplication, division shifts the mantissa so that there is
 one digit before the decimal, but you subtract the exponents from each
 other instead of adding them. For example, consider the problem
-$486.3\div 31.41$. Then the problem goes as follows: $$\begin{aligned}
-    4.863\times 10^2 \div 3.141\times 10^1\\
-    =(4.863\div3.141)\times (10^{2-1})\\
-    =1.548 \times 10^1\\
-    =15.48
-\end{aligned}$$ The result when you put this problem in a calculator has
+$486.3\div 31.41$. Then the problem goes as follows:
+    $$4.863\times 10^2 \div 3.141\times 10^1$$
+    $$=(4.863\div3.141)\times (10^{2-1})$$
+    $$=1.548 \times 10^1$$
+    $$=15.48$$
+    The result when you put this problem in a calculator has
 a higher precision answer than 4, but since the two numbers in the
 problem had precision 4, we had to round the answer to have precision 4
 as well.
 
-# Floating point errors {#floating-point-errors .unnumbered}
+# Floating point errors
 
-## Machine epsilon {#machine-epsilon .unnumbered}
+## Machine epsilon
 
 Machine epsilon characterizes the accuracy of a floating point system,
 and is denoted $\epsilon_{mach}$. The value of machine epsilon is
@@ -87,7 +87,7 @@ epsilon will be, and therefore, the smaller the error will be. Thus, we
 can lessen floating point errors by increasing the precision of the
 numbers in the problem.
 
-## Round-off error {#round-off-error .unnumbered}
+## Round-off error
 
 Round-off error is a common error associated with floating point
 arithmetic. There are 2 rounding rules that contribute to round-off
@@ -139,12 +139,12 @@ smaller number may shift so far as to not have any impact on the result.
 For example, say we are adding 23 and .000000012 (or
 $1.2\times 10^{-8}$). Both numbers have precision of 2, so the solution
 will as well in floating point arithmetic. Shifting the mantissa of the
-smaller number, we get $$\begin{aligned}
-    2.3\times 10^1+.0000000012\times 10^1\\
-    =2.3000000012\times 10^1\\
-    =23.000000012\\
-    =23
-\end{aligned}$$ See that because the second number being added was much
+smaller number, we get
+    $$2.3\times 10^1+.0000000012\times 10^1$$
+    $$=2.3000000012\times 10^1$$
+    $$=23.000000012$$
+    $$=23$$
+    See that because the second number being added was much
 smaller, all of its digits got ignored in the addition. The same thing
 can happen with subtraction. While this case is a more extreme example,
 take a look at the example we used in the section on floating point
@@ -172,7 +172,7 @@ result with $2p$ precision since more digits will be lost in rounding.
 Likewise, for division, the quotient of 2 $p$-digit numbers may contain
 more than $p$ digits and lose digits in the result to round-off error.
 
-## Truncation errors {#truncation-errors .unnumbered}
+## Truncation errors
 
 Truncation errors occur when we approximate a function using truncation;
 the error is the difference between the actual function and the
@@ -204,7 +204,7 @@ time, so you must find the balance between how much accuracy you require
 to deem your result an accurate approximation and how much time you are
 willing to spend to get that accuracy.
 
-# Catastrophic cancellation {#catastrophic-cancellation .unnumbered}
+# Catastrophic cancellation
 
 Catastrophic cancellation mainly occurs in the case of subtraction, when
 subtracting a relatively accurate approximation of two close floating
@@ -220,13 +220,13 @@ values.
 For example, say we want to find the largest root of the equation
 $y=ax^2+bx+c$, where $a=1, b=25,$ and $c=1$. Then we have to solve
 $x^2+25x+1=0$ for the largest root. Using floating point arithmetic to
-solve the quadratic equation, we have $$\begin{aligned}
-    x&=\frac{-b+ \sqrt{b^2-4ac}}{2a}\\
-    &=\frac{-25+\sqrt{25^2-4}}{2}\\
-    &= \frac{-25+\sqrt{621}}{2}\\
-    &= \frac{-25+24.9}{2}\\
-    &=-.05
-\end{aligned}$$ The true value of this calculation is actually
+solve the quadratic equation, we have
+    $$x=\frac{-b+ \sqrt{b^2-4ac}}{2a}$$
+    $$=\frac{-25+\sqrt{25^2-4}}{2}$$
+    $$= \frac{-25+\sqrt{621}}{2}$$
+    $$= \frac{-25+24.9}{2}$$
+    $$=-.05$$
+The true value of this calculation is actually
 $-.040064$. Thus, we calculate a relative error of
 $|\frac{-.05+.04}{-.04}|=.25$, which is a $25\%$ error. Firstly, when we
 take the square root of 621 in the quadratic equation, we have a loss of
@@ -244,7 +244,7 @@ relative error using this new formula is only $.1\%$. The manipulated
 equation makes it so that the 2 numbers of similar magnitude are being
 added instead of subtracted, so no catastrophic cancellation occurs.
 
-# References {#references .unnumbered}
+# References
 
 1.  Wikipedia contributors. (2022, November 29). Floating-point
     arithmetic. Wikipedia.
