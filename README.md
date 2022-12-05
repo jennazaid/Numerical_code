@@ -1,5 +1,7 @@
-# Jenna Zaidspiner Topic: 2 Floating Point Arithmetic and Errors 
-# Floating point numbers {#floating-point-numbers .unnumbered}
+# Jenna Zaidspiner 
+# Topic: 2 
+# Floating Point Arithmetic and Errors 
+# Floating point numbers
 
 In order to understand floating point arithmetic, we must define what a
 floating point number is. A floating point number is an integer value
@@ -15,9 +17,9 @@ where $0 \le d_i\le \beta - 1, i = 0,..., p-1, E\in [L, U]$. The
 mantissa is the value $d_0d_1...d_{p-1}$. Numbers that aren't exactly
 representable in floating point are called *machine numbers*.
 
-# Floating point arithmetic {#floating-point-arithmetic .unnumbered}
+# Floating point arithmetic
 
-## Addition and Subtraction {#addition-and-subtraction .unnumbered}
+## Addition and Subtraction
 
 When adding and subtracting floating point numbers, you must shift the
 mantissas of the numbers so that the exponents of each number match. For
@@ -34,7 +36,7 @@ will discuss the errors associated with each arithmetic operation in a
 later section, but for now it is important to understand the operations
 themselves.
 
-## Multiplication {#multiplication .unnumbered}
+## Multiplication
 
 Just like with addition and subtraction, you still must shift the
 mantissa. However, you do not shift it to make the exponent match, you
@@ -51,7 +53,7 @@ following steps: $$\begin{aligned}
 multiplication case as well since the answer must have the same
 precision as the starting values.
 
-## Division {#division .unnumbered}
+## Division
 
 Similar to multiplication, division shifts the mantissa so that there is
 one digit before the decimal, but you subtract the exponents from each
@@ -66,9 +68,9 @@ a higher precision answer than 4, but since the two numbers in the
 problem had precision 4, we had to round the answer to have precision 4
 as well.
 
-# Floating point errors {#floating-point-errors .unnumbered}
+# Floating point errors
 
-## Machine epsilon {#machine-epsilon .unnumbered}
+## Machine epsilon
 
 Machine epsilon characterizes the accuracy of a floating point system,
 and is denoted $\epsilon_{mach}$. The value of machine epsilon is
@@ -86,7 +88,7 @@ epsilon will be, and therefore, the smaller the error will be. Thus, we
 can lessen floating point errors by increasing the precision of the
 numbers in the problem.
 
-## Round-off error {#round-off-error .unnumbered}
+## Round-off error
 
 Round-off error is a common error associated with floating point
 arithmetic. There are 2 rounding rules that contribute to round-off
@@ -171,7 +173,7 @@ result with $2p$ precision since more digits will be lost in rounding.
 Likewise, for division, the quotient of 2 $p$-digit numbers may contain
 more than $p$ digits and lose digits in the result to round-off error.
 
-## Truncation errors {#truncation-errors .unnumbered}
+## Truncation errors
 
 Truncation errors occur when we approximate a function using truncation;
 the error is the difference between the actual function and the
@@ -243,7 +245,7 @@ relative error using this new formula is only $.1\%$. The manipulated
 equation makes it so that the 2 numbers of similar magnitude are being
 added instead of subtracted, so no catastrophic cancellation occurs.
 
-# References {#references .unnumbered}
+# References
 
 1.  Wikipedia contributors. (2022, November 29). Floating-point
     arithmetic. Wikipedia.
