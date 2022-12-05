@@ -227,12 +227,12 @@ solve the quadratic equation, we have
     $$= \frac{-25+24.9}{2}$$
     $$=-.05$$
 The true value of this calculation is actually
-$-$ .040064. Thus, we calculate a relative error of
+-.040064. Thus, we calculate a relative error of
 $|\frac{-.05+.04}{-.04}|=.25$, which is a 25% error. Firstly, when we
 take the square root of 621 in the quadratic equation, we have a loss of
 digits due to round-off error. The value of the square root when we
 allow a higher precision is 24.9199. Then, because 24.9 is close in
-magnitude but opposite in sign to $-$ 25 we encounter catastrophic
+magnitude but opposite in sign to -25 we encounter catastrophic
 cancellation in this subtraction. The round-off error in the calculation
 of the square root contributed to the amplification of the error in the
 subtraction calculation later in the problem and subsequently the
