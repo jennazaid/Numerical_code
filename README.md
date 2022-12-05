@@ -1,6 +1,4 @@
-# Numerical_code
-# Jenna Zaidspiner Topic: 2 Floating Point Arithmetic and Errors {#jenna-zaidspiner-topic-2-floating-point-arithmetic-and-errors .unnumbered}
-
+# Jenna Zaidspiner Topic: 2 Floating Point Arithmetic and Errors 
 # Floating point numbers {#floating-point-numbers .unnumbered}
 
 In order to understand floating point arithmetic, we must define what a
