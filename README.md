@@ -7,8 +7,8 @@ floating point number is. A floating point number is an integer value
 with a specified number of decimal places after it. For example,
 $-2.987, 5,$ and $3.678239$ are all floating point numbers with a
 different number of decimal places (a different amount of precision).
-There are 3 components to a floating point number, the base ($\beta$),
-precision ($p$), and exponent range ($[L, U]$, where $L$ is the lower
+There are 3 components to a floating point number, the base $(\beta)$,
+precision $(p)$, and exponent range ([L, U], where $L$ is the lower
 bound for the exponent and $U$ is the upper). A number $x$ is then
 written as
 $$x = (d_0 +\frac{d_1}{\beta}+\frac{d_2}{\beta^2}+...+\frac{d_{p-1}}{\beta^{p-1}})\beta^E$$
