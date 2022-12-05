@@ -43,8 +43,8 @@ shift it so that there is only one digit in front of the decimal place
 for each number. Then you simply multiply the significands (the part of
 the number that is before the exponent) and add the exponents. For
 example, if we want to calculate $1.234\times 208.5$, we do the
-following steps: $$
-    1.234\times 10^0 * 2.085\times 10^2$$
+following steps:
+    $$1.234\times 10^0 * 2.085\times 10^2$$
     $$=(1.234*2.085)\times (10^{0+2})$$
     $$=2.57289\times 10^2$$
     $$=257.3$$ 
@@ -57,8 +57,8 @@ precision as the starting values.
 Similar to multiplication, division shifts the mantissa so that there is
 one digit before the decimal, but you subtract the exponents from each
 other instead of adding them. For example, consider the problem
-$486.3\div 31.41$. Then the problem goes as follows: $$
-    4.863\times 10^2 \div 3.141\times 10^1$$
+$486.3\div 31.41$. Then the problem goes as follows:
+    $$4.863\times 10^2 \div 3.141\times 10^1$$
     $$=(4.863\div3.141)\times (10^{2-1})$$
     $$=1.548 \times 10^1$$
     $$=15.48$$
@@ -139,8 +139,8 @@ smaller number may shift so far as to not have any impact on the result.
 For example, say we are adding 23 and .000000012 (or
 $1.2\times 10^{-8}$). Both numbers have precision of 2, so the solution
 will as well in floating point arithmetic. Shifting the mantissa of the
-smaller number, we get $$
-    2.3\times 10^1+.0000000012\times 10^1$$
+smaller number, we get
+    $$2.3\times 10^1+.0000000012\times 10^1$$
     $$=2.3000000012\times 10^1$$
     $$=23.000000012$$
     $$=23$$
@@ -220,8 +220,8 @@ values.
 For example, say we want to find the largest root of the equation
 $y=ax^2+bx+c$, where $a=1, b=25,$ and $c=1$. Then we have to solve
 $x^2+25x+1=0$ for the largest root. Using floating point arithmetic to
-solve the quadratic equation, we have $$
-    x=\frac{-b+ \sqrt{b^2-4ac}}{2a}$$
+solve the quadratic equation, we have
+    $$x=\frac{-b+ \sqrt{b^2-4ac}}{2a}$$
     $$=\frac{-25+\sqrt{25^2-4}}{2}$$
     $$= \frac{-25+\sqrt{621}}{2}$$
     $$= \frac{-25+24.9}{2}$$
