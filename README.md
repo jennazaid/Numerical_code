@@ -78,7 +78,7 @@ Maximum relative error also relates to machine epsilon. Relative error
 is the difference between an exact value and an approximation to it,
 divided by the exact value. The maximum amount of relative error that a
 problem can have is given by
-$$|\frac{\mbox{fl}(x)-x}{x}|\le \epsilon_{mach}$$ where fl$(x)$ is the
+$$|\frac{\mbox{fl}(x)-x}{x}|\le \epsilon_{mach}$$ where fl(x) is the
 value of $x$ after correctly rounded floating point arithmetic, and $x$
 is a non-zero real number within the range of the floating point
 problem. Machine epsilon is inversely related to the number of digits in
@@ -115,14 +115,14 @@ error: *round-to-nearest*, and *chopping* (or *round-by-chop*).
 2.  **Chop**
 
     The chop rounding method says that you should truncate the value
-    after the ($p-1$)st digit, also called \"round to zero\". So, if we
+    after the $(p-1)$st digit, also called \"round to zero\". So, if we
     want a number with precision 2, we only have one digit after the
     decimal place and ignore the digits after it. Using the same values
     that we used in our examples for round-to-nearest: 4.661 rounds to
     4.6, 4.450 becomes 4.4, and 4.451 also becomes 4.4. This rounding
     method is not as accurate as round-to-nearest since it always rounds
     towards 0 and does not take into account the digits after the
-    ($p-1$)st digit. Therefore, if we want to improve accuracy of our
+    $(p-1)$st digit. Therefore, if we want to improve accuracy of our
     outcome, we should use round-to-nearest over the chop method. For
     rounding by chop, $\epsilon_{mach}=\beta^{1-p}$.
 
@@ -178,7 +178,7 @@ Truncation errors occur when we approximate a function using truncation;
 the error is the difference between the actual function and the
 truncated value of the function. These usually occur when we approximate
 functions that can be represented using an infinite series instead of a
-finite one. For example, let's consider the Taylor series of cos$(x)$.
+finite one. For example, let's consider the Taylor series of cos(x).
 This can be represented as the infinite series
 $$\mbox{cos}(x) \approx 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+...+\sum_{n=4}^{\infty} (-1)^n\frac{x^{2n}}{(2n)!}$$
 
@@ -195,7 +195,7 @@ error rounds the final digit in computation, while truncation error cute
 of the sequence/floating point number after a certain number of digits,
 not taking into account the following digits. Truncation errors will
 grow the more digits you leave out. For example, if we only used the
-first term of cosine, we would have that cos$(x)\approx 1$, which is not
+first term of cosine, we would have that cos(x)$\approx$ 1, which is not
 sufficiently accurate. But if we allow more terms to be included in the
 computation, then we can get to a point where the remaining terms are
 sufficiently small that they do not have a significant impact on the
