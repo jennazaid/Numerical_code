@@ -1,6 +1,4 @@
-# Jenna Zaidspiner 
-# Topic: 2 
-# Floating Point Arithmetic and Errors 
+# Jenna Zaidspiner \\Topic: 2 \\ Floating Point Arithmetic and Errors 
 # Floating point numbers
 
 In order to understand floating point arithmetic, we must define what a
