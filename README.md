@@ -44,10 +44,10 @@ for each number. Then you simply multiply the significands (the part of
 the number that is before the exponent) and add the exponents. For
 example, if we want to calculate $1.234\times 208.5$, we do the
 following steps: $$
-    1.234\times 10^0 * 2.085\times 10^2\\
-    =(1.234*2.085)\times (10^{0+2})\\
-    =2.57289\times 10^2\\
-    =257.3\\$$ 
+    1.234\times 10^0 * 2.085\times 10^2$$
+    $$=(1.234*2.085)\times (10^{0+2})$$
+    $$=2.57289\times 10^2$$
+    $$=257.3$$ 
     Notice that we have a loss of digits in the
 multiplication case as well since the answer must have the same
 precision as the starting values.
@@ -58,11 +58,11 @@ Similar to multiplication, division shifts the mantissa so that there is
 one digit before the decimal, but you subtract the exponents from each
 other instead of adding them. For example, consider the problem
 $486.3\div 31.41$. Then the problem goes as follows: $$
-    4.863\times 10^2 \div 3.141\times 10^1\\
-    =(4.863\div3.141)\times (10^{2-1})\\
-    =1.548 \times 10^1\\
-    =15.48
-$$ The result when you put this problem in a calculator has
+    4.863\times 10^2 \div 3.141\times 10^1$$
+    $$=(4.863\div3.141)\times (10^{2-1})$$
+    $$=1.548 \times 10^1$$
+    $$=15.48$$
+    The result when you put this problem in a calculator has
 a higher precision answer than 4, but since the two numbers in the
 problem had precision 4, we had to round the answer to have precision 4
 as well.
@@ -140,11 +140,11 @@ For example, say we are adding 23 and .000000012 (or
 $1.2\times 10^{-8}$). Both numbers have precision of 2, so the solution
 will as well in floating point arithmetic. Shifting the mantissa of the
 smaller number, we get $$
-    2.3\times 10^1+.0000000012\times 10^1\\
-    =2.3000000012\times 10^1\\
-    =23.000000012\\
-    =23
-$$ See that because the second number being added was much
+    2.3\times 10^1+.0000000012\times 10^1$$
+    $$=2.3000000012\times 10^1$$
+    $$=23.000000012$$
+    $$=23$$
+    See that because the second number being added was much
 smaller, all of its digits got ignored in the addition. The same thing
 can happen with subtraction. While this case is a more extreme example,
 take a look at the example we used in the section on floating point
@@ -204,7 +204,7 @@ time, so you must find the balance between how much accuracy you require
 to deem your result an accurate approximation and how much time you are
 willing to spend to get that accuracy.
 
-# Catastrophic cancellation {#catastrophic-cancellation .unnumbered}
+# Catastrophic cancellation
 
 Catastrophic cancellation mainly occurs in the case of subtraction, when
 subtracting a relatively accurate approximation of two close floating
@@ -220,13 +220,13 @@ values.
 For example, say we want to find the largest root of the equation
 $y=ax^2+bx+c$, where $a=1, b=25,$ and $c=1$. Then we have to solve
 $x^2+25x+1=0$ for the largest root. Using floating point arithmetic to
-solve the quadratic equation, we have $$\begin{aligned}
-    x&=\frac{-b+ \sqrt{b^2-4ac}}{2a}\\
-    &=\frac{-25+\sqrt{25^2-4}}{2}\\
-    &= \frac{-25+\sqrt{621}}{2}\\
-    &= \frac{-25+24.9}{2}\\
-    &=-.05
-\end{aligned}$$ The true value of this calculation is actually
+solve the quadratic equation, we have $$
+    x=\frac{-b+ \sqrt{b^2-4ac}}{2a}$$
+    $$=\frac{-25+\sqrt{25^2-4}}{2}$$
+    $$= \frac{-25+\sqrt{621}}{2}$$
+    $$= \frac{-25+24.9}{2}$$
+    $$=-.05$$
+The true value of this calculation is actually
 $-.040064$. Thus, we calculate a relative error of
 $|\frac{-.05+.04}{-.04}|=.25$, which is a $25\%$ error. Firstly, when we
 take the square root of 621 in the quadratic equation, we have a loss of
