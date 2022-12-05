@@ -115,14 +115,14 @@ error: *round-to-nearest*, and *chopping* (or *round-by-chop*).
 2.  **Chop**
 
     The chop rounding method says that you should truncate the value
-    after the $(p-1)$st digit, also called \"round to zero\". So, if we
+    after the $(p-1)$ st digit, also called \"round to zero\". So, if we
     want a number with precision 2, we only have one digit after the
     decimal place and ignore the digits after it. Using the same values
     that we used in our examples for round-to-nearest: 4.661 rounds to
     4.6, 4.450 becomes 4.4, and 4.451 also becomes 4.4. This rounding
     method is not as accurate as round-to-nearest since it always rounds
     towards 0 and does not take into account the digits after the
-    $(p-1)$st digit. Therefore, if we want to improve accuracy of our
+    $(p-1)$ st digit. Therefore, if we want to improve accuracy of our
     outcome, we should use round-to-nearest over the chop method. For
     rounding by chop, $\epsilon_{mach}=\beta^{1-p}$.
 
@@ -178,7 +178,7 @@ Truncation errors occur when we approximate a function using truncation;
 the error is the difference between the actual function and the
 truncated value of the function. These usually occur when we approximate
 functions that can be represented using an infinite series instead of a
-finite one. For example, let's consider the Taylor series of cos(x).
+finite one. For example, let's consider the Taylor series of cos $(x)$.
 This can be represented as the infinite series
 $$\mbox{cos}(x) \approx 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+...+\sum_{n=4}^{\infty} (-1)^n\frac{x^{2n}}{(2n)!}$$
 
@@ -195,7 +195,7 @@ error rounds the final digit in computation, while truncation error cute
 of the sequence/floating point number after a certain number of digits,
 not taking into account the following digits. Truncation errors will
 grow the more digits you leave out. For example, if we only used the
-first term of cosine, we would have that cos(x)$\approx$ 1, which is not
+first term of cosine, we would have that cos $(x) \approx$ 1, which is not
 sufficiently accurate. But if we allow more terms to be included in the
 computation, then we can get to a point where the remaining terms are
 sufficiently small that they do not have a significant impact on the
@@ -227,12 +227,12 @@ solve the quadratic equation, we have
     $$= \frac{-25+24.9}{2}$$
     $$=-.05$$
 The true value of this calculation is actually
-$-.040064$. Thus, we calculate a relative error of
-$|\frac{-.05+.04}{-.04}|=.25$, which is a $25\%$ error. Firstly, when we
+-.040064. Thus, we calculate a relative error of
+$|\frac{-.05+.04}{-.04}|=.25$, which is a 25% error. Firstly, when we
 take the square root of 621 in the quadratic equation, we have a loss of
 digits due to round-off error. The value of the square root when we
 allow a higher precision is 24.9199. Then, because 24.9 is close in
-magnitude but opposite in sign to $-25$ we encounter catastrophic
+magnitude but opposite in sign to -25 we encounter catastrophic
 cancellation in this subtraction. The round-off error in the calculation
 of the square root contributed to the amplification of the error in the
 subtraction calculation later in the problem and subsequently the
@@ -240,7 +240,7 @@ relative error calculation. This problem can be avoided by manipulating
 the quadratic equation. Multiplying the numerator and denominator of the
 quadratic equation by $$\frac{-b-\sqrt{b^2-4ac}}{-b-\sqrt{b^2-4ac}}$$
 gives us the new equation $$x=\frac{2ac}{-b-\sqrt{b^2-4ac}}$$ The
-relative error using this new formula is only $.1\%$. The manipulated
+relative error using this new formula is only .1\%. The manipulated
 equation makes it so that the 2 numbers of similar magnitude are being
 added instead of subtracted, so no catastrophic cancellation occurs.
 
