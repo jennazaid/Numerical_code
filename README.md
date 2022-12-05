@@ -12,7 +12,7 @@ precision ($p$), and exponent range ($[L, U]$, where $L$ is the lower
 bound for the exponent and $U$ is the upper). A number $x$ is then
 written as
 $$x = (d_0 +\frac{d_1}{\beta}+\frac{d_2}{\beta^2}+...+\frac{d_{p-1}}{\beta^{p-1}})\beta^E$$
-where $0 \le d_i\le \beta - 1, i = 0,..., p-1, E\in [L, U]$. The
+where $0 \le d_i\le \beta - 1, i = 0,..., p-1, E\in$ [L, U]. The
 mantissa is the value $d_0d_1...d_{p-1}$. Numbers that aren't exactly
 representable in floating point are called *machine numbers*.
 
